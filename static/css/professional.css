@@ -90,3 +90,19 @@
  .safety-section> .container>div{grid-template-columns:1fr!important;padding:30px 22px!important}
  .hero-stat-row{gap:20px}
 }
+
+/* Final navbar refinement */
+.nav-container{max-width:1400px;padding:10px 20px;gap:14px}
+.brand-logo{gap:9px;min-width:190px}.logo-mark-wrap{width:36px;height:36px}.logo-mark{width:24px;height:24px}
+.brand-name{font-size:1.05rem}.brand-sub{font-size:.65rem}
+.desktop-nav{gap:2px;padding:3px 4px;flex:0 1 auto}.nav-link{gap:5px;padding:8px 11px;font-size:.78rem}.nav-icon{font-size:.9rem}.nav-badge{display:none}
+.nav-actions{gap:8px}.engine-badge{padding:7px 11px;font-size:.7rem}.engine-text{white-space:nowrap}.theme-toggle-btn{width:38px;height:38px}.nav-actions>.btn{padding:10px 17px;font-size:.8rem}
+@media(max-width:1180px){.brand-logo{min-width:auto}.brand-meta{display:none}.desktop-nav .nav-link{padding:8px 9px}.engine-badge{display:none}}
+@media(max-width:900px){.nav-container{padding:10px 16px}.nav-actions>.btn{display:none}}
+/* PDF preview */
+.report-preview-page{max-width:1250px;margin:34px auto 70px;padding:0 22px}.report-preview-shell{background:var(--bg-surface-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.report-preview-header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 30px;border-bottom:1px solid var(--border-subtle)}.report-preview-header h1{font-size:1.8rem;margin:5px 0}.report-preview-header p{color:var(--text-secondary);font-size:.86rem}
+.report-preview-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.report-preview-note{margin:18px 22px;padding:12px 15px;border:1px solid var(--border-glow);background:var(--primary-soft);border-radius:var(--radius-md);display:flex;gap:9px;color:var(--text-secondary);font-size:.78rem;line-height:1.5}
+.report-pdf-frame{height:min(82vh,1050px);background:#dfe5e8;padding:16px}.report-pdf-frame iframe{width:100%;height:100%;border:0;border-radius:10px;background:#fff;box-shadow:0 10px 35px rgba(0,0,0,.18)}
+@media(max-width:760px){.report-preview-header{align-items:flex-start;flex-direction:column;padding:22px}.report-preview-actions{width:100%;justify-content:flex-start}.report-pdf-frame{height:75vh;padding:8px}}
+@media print{.report-preview-header,.report-preview-note{display:none}.report-preview-page{margin:0;padding:0}.report-pdf-frame{height:auto;padding:0}}
