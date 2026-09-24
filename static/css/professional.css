@@ -1,0 +1,30 @@
+/* MediAI 2.0 — Professional Product Layer */
+:root{
+  --pro-blue:#0ea5e9;
+  --pro-cyan:#22d3ee;
+  --pro-navy:#071525;
+  --pro-surface:rgba(12,28,48,.78);
+  --pro-border:rgba(148,163,184,.16);
+}
+.hero-section{padding:clamp(64px,8vw,112px) 0 72px}
+.hero-content{max-width:680px}
+.hero-title{font-size:clamp(3rem,6vw,5.7rem);letter-spacing:-.055em;line-height:.98}
+.hero-subtitle{max-width:620px;font-size:1.08rem;line-height:1.8;color:var(--text-secondary)}
+.hero-badge-wrap{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid var(--border-glow);background:var(--primary-soft);border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.08em;color:var(--primary)}
+.hero-stat-row{margin-top:42px;padding-top:24px;border-top:1px solid var(--border-subtle)}
+.anatomy-section,.calculators-section{padding-top:90px}
+.section-pill{display:inline-flex;padding:7px 12px;border-radius:999px;background:var(--primary-soft);border:1px solid var(--border-glow);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--primary)}
+.section-title{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.035em}
+.anatomy-card,.calculator-card,.feature-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.anatomy-card:hover,.calculator-card:hover,.feature-card:hover{transform:translateY(-5px);border-color:var(--border-glow);box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.site-header{box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.brand-sub{letter-spacing:.07em}
+.btn{min-height:44px}
+@media(max-width:900px){
+ .hero-section{padding-top:48px}
+ .hero-title{font-size:clamp(2.65rem,12vw,4.2rem)}
+ .hero-stat-row{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
