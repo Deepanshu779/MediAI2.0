@@ -75,3 +75,18 @@
  .assessment-page-wrapper .wizard-nav-controls>div{width:100%}
  .assessment-page-wrapper .wizard-nav-controls .btn{flex:1}
 }
+
+
+/* Homepage product polish */
+.hero-content{position:relative;z-index:2}
+.hero-title{max-width:720px}
+.hero-subtitle{max-width:640px}
+.hero-cta-group .btn{min-height:50px}
+.anatomy-card,.calc-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.anatomy-card:hover,.calc-card:hover{border-color:var(--border-glow);box-shadow:0 20px 55px rgba(0,0,0,.14)}
+.f-badge{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--border-subtle);border-radius:999px;background:var(--bg-surface);font-size:.76rem;color:var(--text-secondary)}
+.safety-section .btn{min-height:44px}
+@media(max-width:800px){
+ .safety-section> .container>div{grid-template-columns:1fr!important;padding:30px 22px!important}
+ .hero-stat-row{gap:20px}
+}
