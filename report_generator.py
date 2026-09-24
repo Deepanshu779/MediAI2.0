@@ -5,6 +5,7 @@ from html import escape
 try:
     from reportlab.lib import colors
     from reportlab.lib.enums import TA_CENTER
+    from reportlab.pdfbase.pdfmetrics import stringWidth
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
     from reportlab.lib.units import inch
@@ -172,8 +173,24 @@ def generate_report(
     generated_at = datetime.now().strftime("%d %b %Y, %I:%M %p")
     emergency_text = ", ".join(emergency) if emergency else "None"
 
+    def draw_page(canvas, doc):
+        canvas.saveState()
+        width, height = A4
+        canvas.setStrokeColor(BRAND)
+        canvas.setLineWidth(1.2)
+        canvas.line(doc.leftMargin, height - 22, width - doc.rightMargin, height - 22)
+        canvas.setFont("Helvetica-Bold", 8.5)
+        canvas.setFillColor(BRAND_DARK)
+        canvas.drawString(doc.leftMargin, height - 17, "MediAI 2.0")
+        canvas.setFont("Helvetica", 8)
+        canvas.setFillColor(MUTED)
+        canvas.drawString(doc.leftMargin, 18, f"Health Assessment Report  •  Page {doc.page}")
+        canvas.drawRightString(width - doc.rightMargin, 18, "Educational & informational use")
+        canvas.restoreState()
+
     story = [
-        Paragraph("MediAI Healthcare Assessment Report", styles["title"]),
+        Paragraph("MediAI 2.0", styles["subtitle"]),
+        Paragraph("Health Assessment Report", styles["title"]),
         Paragraph(
             "Machine learning health assessment with educational care guidance",
             styles["subtitle"]
@@ -250,5 +267,5 @@ def generate_report(
         disclaimer_table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), WARNING)]))
         story.append(disclaimer_table)
 
-    doc.build(story)
+    doc.build(story, onFirstPage=draw_page, onLaterPages=draw_page)
     return True
