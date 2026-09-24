@@ -312,14 +312,27 @@ def api_calculate_vitals():
     })
 
 
+@app.route("/report/preview")
+def preview_report():
+    """Preview the latest generated PDF before downloading it."""
+    pdf_path = BASE_DIR / "static" / "report.pdf"
+    if not pdf_path.exists():
+        return jsonify({"error": "Report not generated yet"}), 404
+    return render_template("pages/report_preview.html")
+
+
 @app.route("/report/download")
 def download_report():
-    """
-    Serve generated PDF report file for download.
-    """
+    """Serve the generated PDF inline for preview or as an attachment for download."""
     pdf_path = BASE_DIR / "static" / "report.pdf"
     if pdf_path.exists():
-        return send_file(pdf_path, as_attachment=True, download_name="MediAI_Clinical_Report.pdf")
+        inline = request.args.get("inline") == "1"
+        return send_file(
+            pdf_path,
+            as_attachment=not inline,
+            download_name="MediAI_Health_Assessment_Report.pdf",
+            mimetype="application/pdf"
+        )
     return jsonify({"error": "Report not generated yet"}), 404
 
 
