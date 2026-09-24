@@ -18,34 +18,32 @@
         <nav class="desktop-nav" aria-label="Primary Navigation">
             <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">
                 <span class="nav-icon">✦</span>
-                <span>Overview</span>
+                <span>Home</span>
             </a>
             <a href="/assessment" class="nav-link {% if request.path == '/assessment' %}active{% endif %}">
                 <span class="nav-icon">🩺</span>
-                <span>AI Assessment</span>
-                <span class="nav-badge">4 steps</span>
+                <span>Assessment</span>
             </a>
             <a href="/assistant" class="nav-link {% if request.path == '/assistant' %}active{% endif %}">
                 <span class="nav-icon">💬</span>
-                <span>AI Assistant</span>
-                <span class="nav-badge live">AI</span>
+                <span>Assistant</span>
             </a>
             <a href="/#anatomy" class="nav-link">
                 <span class="nav-icon">🧬</span>
-                <span>3D Anatomy</span>
+                <span>Anatomy</span>
             </a>
             <a href="/#calculators" class="nav-link">
                 <span class="nav-icon">⚡</span>
-                <span>Vitals Tools</span>
+                <span>Vitals</span>
             </a>
         </nav>
 
         <!-- Right Header Actions -->
         <div class="nav-actions">
             <!-- Engine Status Badge -->
-            <div class="engine-badge" title="Trained offline ML random forest diagnostic engine ready">
+            <div class="engine-badge" title="Local assessment engine status">
                 <span class="pulse-indicator"></span>
-                <span class="engine-text">Assessment Engine Ready</span>
+                <span class="engine-text">Engine Ready</span>
             </div>
 
             <!-- Dark / Light Theme Toggle -->
@@ -90,23 +88,23 @@
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="mobile-nav-links">
             <a href="/" class="mobile-link {% if request.path == '/' %}active{% endif %}">
-                <span>✦ Overview</span>
+                <span>✦ Home</span>
             </a>
             <a href="/assessment" class="mobile-link {% if request.path == '/assessment' %}active{% endif %}">
-                <span>🩺 AI Assessment</span>
+                <span>🩺 Assessment</span>
             </a>
             <a href="/assistant" class="mobile-link {% if request.path == '/assistant' %}active{% endif %}">
-                <span>💬 AI Assistant</span>
+                <span>💬 Assistant</span>
             </a>
             <a href="/#anatomy" class="mobile-link">
-                <span>🧬 3D Anatomy Explorer</span>
+                <span>🧬 Anatomy Explorer</span>
             </a>
             <a href="/#calculators" class="mobile-link">
-                <span>⚡ Clinical Calculators</span>
+                <span>⚡ Vitals Tools</span>
             </a>
             <div class="mobile-cta-wrap">
                 <a href="/assessment" class="btn btn-primary btn-full">
-                    <span>Launch Clinical Assessment</span>
+                    <span>Start Assessment</span>
                 </a>
             </div>
         </div>
