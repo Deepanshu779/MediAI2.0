@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Report Preview | MediAI 2.0{% endblock %}
+
+{% block content %}
+<div class="report-preview-page">
+    <div class="report-preview-shell">
+        <div class="report-preview-header">
+            <div>
+                <span class="section-pill">PDF Report</span>
+                <h1>Health Assessment Report</h1>
+                <p>Review your generated report before saving a copy to your device.</p>
+            </div>
+            <div class="report-preview-actions">
+                <a href="/report/download" class="btn btn-primary btn-glow">
+                    <span>Download PDF</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2v-4"></path>
+                    </svg>
+                </a>
+                <button type="button" class="btn btn-secondary" onclick="window.print()">Print</button>
+                <a href="/assessment" class="btn btn-secondary">New Assessment</a>
+            </div>
+        </div>
+        <div class="report-preview-note">
+            <span>ⓘ</span>
+            <span>The PDF is generated from your latest MediAI assessment. Review the information carefully and consult a qualified healthcare professional for medical decisions.</span>
+        </div>
+        <div class="report-pdf-frame">
+            <iframe src="/report/download?inline=1" title="MediAI health assessment PDF preview"></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}
